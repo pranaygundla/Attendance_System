@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-qI1FbuMy1PKz+eLHIzDB9L+PUuJ3QlxQGJRJq2co57IwZD7ZErG7aoU+7XK+BfEJ" crossorigin="anonymous">
+</head>
+<body>
+    <h1>SignUp</h1>
+  <form method="POST">
+    {% csrf_token %}
+
+    <div class="mb-3">
+      
+        <label class="form-label">First Name</label>
+        <input  class="form-control" name="f_name" id="UserName" aria-describedby="emailHelp">
+        
+      </div>
+
+      <div class="mb-3">
+      
+        <label class="form-label">Last Name</label>
+        <input  class="form-control" name="l_name" id="UserName" aria-describedby="emailHelp">
+        
+      </div>
+
+    <div class="mb-3">
+      
+      <label class="form-label">UserName</label>
+      <input  class="form-control" id="UserName" name="username" aria-describedby="emailHelp">
+      
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" class="form-control" name="password" id="exampleInputPassword1">
+    </div>
+
+    <div class="mb-3 form-check">
+
+      
+    </div>
+    <p>Already have an account <a href="{% url 'login' %}">Login</a></p>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6ttnIX3A7DUljHFL3lUUaUYjqFJZf6c79v5PEnLg+29P91PzP4x" crossorigin="anonymous"></script>
+</body>
+</html>
