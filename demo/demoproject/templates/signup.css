@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins',sans-serif;
+}
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+   background: url('nature.jpg')no-repeat;
+   background-position: center;
+   background-size: cover;
+}
+.form-box{
+    position: relative;
+    width: 400px;
+    height: 500px;
+    background: transparent;
+    border: 2px solid rgba(235, 16, 16, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+h2{
+    font-size: 2em;
+    color: blue;
+    text-align: center;
+}
+.inputbox{
+    position: relative;
+    margin: 30px 0;
+    width: 310px;
+    border-bottom: 2px solid #13db16;
+}
+.inputbox label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    color: rgb(19, 18, 18);
+    font-size: 1em;
+    pointer-events: none;
+    transition: .5s;
+}
+input:focus ~ label,
+input:valid ~ label{
+top: -5px;
+}
+.inputbox input {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    padding:0 35px 0 5px;
+    color: rgb(12, 12, 12);
+}
+.inputbox ion-icon{
+    position: absolute;
+    right: 8px;
+    color: rgb(17, 18, 17);
+    font-size: 1.2em;
+    top: 20px;
+}
+.role-selection {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+  }
+  
+  /* Base button styling */
+  .role-selection input[type="button"] {
+    background-color: #2200ff;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 30px; /* Oval shape */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  /* Button hover effects */
+  .role-selection input[type="button"]:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+  }
+  
+  /* Button active (pressed) effect */
+  .role-selection input[type="button"]:active {
+    background-color: #003d7a;
+    transform: translateY(0);
+  }
+  
+  /* Different colors for each role */
+  #teacher {
+    background-color: #28a745; /* Green for Teacher */
+  }
+  
+  #student {
+    background-color: #ff5722; /* Red for Student */
+  }
+  
+  #hod {
+    background-color: #ffc107; /* Yellow for HOD */
+  }
+.forget{
+    margin: -15px 0 105x ;
+    font-size: .9em;
+    color: rgb(17, 15, 15);
+    display: flex;
+    justify-content: space-between;  
+}
+
+.forget label input{
+    margin-right: 3px;
+    
+}
+.forget label a{
+    color: rgb(255, 72, 0);
+    text-decoration: none;
+}
+.forget label a:hover{
+    text-decoration: underline;
+}
+button{
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    background: rgb(220, 224, 111);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+}
+.register{
+    font-size: .9em;
+    color: rgb(17, 17, 17);
+    text-align: center;
+    margin: 25px 0 10px;
+}
+.register p a{
+    text-decoration: none;
+    color: red;
+    font-weight: 600;
+}
+.register p a:hover{
+    text-decoration: underline;
+}
