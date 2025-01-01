@@ -1,0 +1,82 @@
+/* Heading style */
+h1 {
+    text-align: center;
+    font-size: 2em;
+    color: rgb(22, 32, 231); /* Blue color */
+    margin-bottom: 20px; /* Space between heading and form */
+}
+
+/* Center the content */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Ensure everything is aligned to the top */
+    height: 100vh;
+    margin: 0;
+    background-color: #d0d0ea; /* Soft background color */
+    padding: 20px;
+}
+
+/* Center the form and apply some padding */
+form {
+    background-color: #e4bfbf; /* White background for form */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 350px;
+}
+
+/* Style for the labels */
+label {
+    font-size: 1.1em;
+    color: #191818; /* Dark grey for labels */
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+/* Style for the select and input fields */
+select, input[type="date"] {
+    font-size: 1em;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 200px;
+}
+
+/* Style the "Select Subject" and "Select Date" side by side */
+div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+/* Add some space between the select elements */
+div select, div input {
+    margin-right: 10px;
+}
+
+/* Button styling */
+button {
+    background-color: #4CAF50; /* Green button */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* Button hover effect */
+button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* Add some space between the form elements */
+form > label, form > select, form > input {
+    margin-bottom: 10px;
+}
