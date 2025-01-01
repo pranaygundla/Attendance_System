@@ -1,0 +1,126 @@
+body{
+    background-color: rgb(234, 225, 225);
+}
+/* General Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    table-layout: auto;
+}
+
+/* Header Styling */
+thead {
+    background-color: #4CAF50;
+    color: white;
+}
+
+th {
+    padding: 12px 15px;
+    text-align: left;
+    font-size: 16px;
+}
+
+/* Table Body Styling */
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+/* Row Hover Effect */
+tbody tr:hover {
+    background-color: #f4fafb;
+    cursor: pointer;
+}
+
+/* Cell Styling */
+td {
+    padding: 12px 15px;
+    text-align: left;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Student Name Styling */
+td:nth-child(1) {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+/* Percentage Styling */
+td:nth-child(5) {
+    font-weight: bold;
+    color: #e74c3c;
+    text-align: center;
+}
+/* Below 50% attendance - Red Background */
+td.attendance-below-50 {
+    background-color: #e74c3c;
+}
+
+/* Above 50% attendance - Green Background */
+td.attendance-above-50 {
+    background-color: #2ecc71;
+}
+
+/* Pin Styling */
+td:nth-child(2) {
+    color: #3498db;
+}
+
+/* Total Classes and Total Present Styling */
+td:nth-child(3), td:nth-child(4) {
+    color: #16a085;
+    text-align: center;
+}
+
+/* Border and Alignment */
+th, td {
+    border: 1px solid #ddd;
+}
+
+/* Make the table horizontally scrollable on small screens */
+.table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 0 10px;
+}
+
+/* Responsive Styling for Smaller Screens */
+@media screen and (max-width: 768px) {
+    table {
+        font-size: 12px;
+        margin: 10px 0;
+    }
+
+    th, td {
+        padding: 8px 10px;
+    }
+
+    h1 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    /* Ensure horizontal scroll is enabled on smaller screens */
+    .table-wrapper {
+        margin: 0;
+    }
+
+    td {
+        word-wrap: break-word;
+    }
+}
+
+h1 {
+    font-family: 'Roboto', sans-serif;
+    color: #2c3e50;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+}
