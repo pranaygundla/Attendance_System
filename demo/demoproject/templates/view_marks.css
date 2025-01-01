@@ -1,0 +1,115 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #d6d6e0; /* Soft light background */
+    margin: 0;
+    padding: 20px;
+}
+
+/* Form styling */
+form {
+    background-color: #b5e5e9; /* White background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 350px;
+    margin: 20px auto; /* Center the form on the page */
+}
+
+form label {
+    font-size: 1.1em;
+    color: #333333;
+    margin-bottom: 8px;
+    display: block; /* Make labels block level to stack */
+    font-weight: bold;
+}
+
+form input, form select {
+    font-size: 1em;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%; /* Make inputs and select fill their container */
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+form input[type="text"]:focus, form select:focus {
+    outline: none;
+    border-color: #4A90E2; /* Blue border on focus */
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.5); /* Blue glow effect */
+}
+
+form button {
+    background-color: #4CAF50; /* Green background */
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+}
+
+form button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+form button:active {
+    background-color: #388e3c; /* Even darker green on active */
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse; /* Remove space between table cells */
+    margin-top: 30px;
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+table th {
+    background-color: #4A90E2; /* Blue header background */
+    color: white;
+    font-weight: bold;
+}
+
+table td {
+    background-color: #ffffff; /* White cell background */
+    color: #333;
+}
+
+table tr:nth-child(even) td {
+    background-color: #f9f9f9; /* Alternate row color for better readability */
+}
+
+table tr:hover td {
+    background-color: #f1f1f1; /* Light grey on hover */
+}
+
+table td {
+    font-size: 1em;
+}
+
+table td a {
+    color: #4A90E2; /* Blue links */
+    text-decoration: none;
+}
+
+table td a:hover {
+    text-decoration: underline;
+}
+
+/* No marks found message */
+p {
+    text-align: center;
+    font-size: 1.1em;
+    color: #ff4d4d; /* Red color for no results */
+    font-weight: bold;
+}
