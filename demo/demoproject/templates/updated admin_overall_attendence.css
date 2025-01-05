@@ -1,0 +1,93 @@
+body {
+    background-color: rgb(234, 225, 225);
+}
+
+/* General Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    table-layout: fixed; /* Ensures table adapts to screen width */
+}
+
+/* Header Styling */
+thead {
+    background-color: #4CAF50;
+    color: white;
+}
+
+th {
+    padding: 12px 15px;
+    text-align: left;
+    font-size: 13px;
+    word-wrap: break-word; /* Prevent text overflow */
+}
+
+/* Table Body Styling */
+tbody tr:nth-child(even) {
+    background-color: #f7eaea;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #ede7e7;
+}
+
+/* Row Hover Effect */
+tbody tr:hover {
+    background-color: #bdeac9;
+    cursor: pointer;
+}
+
+/* Cell Styling */
+td {
+    padding: 12px 15px;
+    text-align: left;
+    font-size: 13px;
+    color: #333;
+    word-wrap: break-word; /* Prevent text overflow */
+}
+
+/* Student Name Styling */
+td:nth-child(1) {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+/* Percentage Styling */
+td:nth-child(5) {
+    font-weight: bold;
+    color: #e74c3c;
+    text-align: center;
+}
+
+/* Below 50% attendance - Red Background */
+td.attendance-below-50 {
+    background-color: #e74c3c;
+}
+
+/* Above 50% attendance - Green Background */
+td.attendance-above-50 {
+    background-color: #2ecc71;
+}
+
+/* Pin Styling */
+td:nth-child(2) {
+    color: #3498db;
+}
+
+/* Total Classes and Total Present Styling */
+td:nth-child(3), td:nth-child(4) {
+    color: #16a085;
+    text-align: center;
+}
+
+
+h1 {
+    font-family: 'Roboto', sans-serif;
+    color: #2c3e50;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+}
