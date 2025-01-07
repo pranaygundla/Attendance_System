@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mark Attendance</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #b0dce0;
+            margin: 0;
+            padding: 0px 0px; /* Added padding to center content vertically */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 70vh;
+        }
+
+        /* Heading Style */
+        h1 {
+            text-align: center;
+            color: #1b0505;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        h3 {
+            color: #1b0505;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        /* Centering the Select Date and Subject */
+        .selection-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center; /* Ensures content is centered */
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Style for labels and inputs */
+        label {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+
+        input[type="date"],
+        select {
+            padding: 6px;
+            font-size: 16px;
+            width: 150px; /* Set a fixed width */
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* Attendance Table Styles */
+        .attendance-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            max-width: 800px; /* Limit table width */
+        }
+
+        .attendance-table th, .attendance-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .attendance-table th {
+            background-color: #9d9999;
+            font-weight: bold;
+        }
+
+        .attendance-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .attendance-table tr:hover {
+            background-color: #eaeaea;
+        }
+
+        .attendance-checkbox {
+            transform: scale(2); /* Increase checkbox size */
+            margin: 10px; /* Optional: add space around checkboxes */
+        }
+
+        a {
+            margin-top: 3px;
+            display: inline-block;
+            font-size: 16px;
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* "Select All" checkbox styling */
+        #select_all {
+            margin-top: 0px;
+        }
+
+        /* Style for rows based on attendance status */
+        .present {
+            background-color: #51dd41; /* Green for present */
+        }
+
+        .absent {
+            background-color: #e76e78; /* Red for absent */
+        }
+
+        /* Center the Submit button */
+        .submit-btn {
+            padding: 10px 20px;
+            background-color: #29c252;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            text-align: center;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .submit-btn:hover {
+            background-color: #58ce68;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mark Attendance</h1>
+
+    <!-- Centered Date and Subject Selection -->
+    <div class="selection-container">
+        <form method="post">
+            <!-- Date and Subject Selection -->
+            <label for="id_date">Select Date:</label>
+            <input type="date" name="date" id="date" required>
+
+            <label for="subject">Select Subject:</label>
+            <select name="subject" id="subject">
+                <option value="{{ subject.id }}">select_subject</option>
+            </select>
+        </form>
+    </div>
+
+    <h3>Select Students:</h3>
+
+    <!-- "Select All" Checkbox -->
+    <label>
+        <input type="checkbox" id="select_all" /> Select All
+    </label>
+
+    <table class="attendance-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Pin</th>
+                <th>Attendance Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in students %}
+            <tr id="student_{{ student.pin }}" class="absent">
+                <td>{{ student.pin }}</td>
+                <td>{{ student.name }}</td>
+                <td>
+                    <input type="checkbox" class="attendance-checkbox" name="attendance_{{ student.pin }}" value="Present">
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- Centered Submit Button -->
+    <button type="submit" class="submit-btn">Submit</button>
+
+    <br>
+    <a href="{% url 'export_attendance' %}">Export Attendance to Excel</a>
+
+    <script>
+        // Ensure the JavaScript runs after the page is fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get the "Select All" checkbox
+            const selectAllCheckbox = document.getElementById('select_all');
+            
+            // Get all the attendance checkboxes
+            const checkboxes = document.querySelectorAll('.attendance-checkbox');
+
+            // Function to update row color based on attendance
+            function updateRowColor(checkbox, row) {
+                if (checkbox.checked) {
+                    row.classList.add('present');
+                    row.classList.remove('absent');
+                } else {
+                    row.classList.add('absent');
+                    row.classList.remove('present');
+                }
+            }
+
+            // Attach the change event to "Select All" checkbox
+            selectAllCheckbox.addEventListener('change', function() {
+                // Set all checkboxes' checked status to the "Select All" checkbox
+                checkboxes.forEach(function(checkbox) {
+                    checkbox.checked = selectAllCheckbox.checked;
+                    const row = checkbox.closest('tr');
+                    updateRowColor(checkbox, row);
+                });
+            });
+
+            // Attach change event to each individual checkbox
+            checkboxes.forEach(function(checkbox) {
+                const row = checkbox.closest('tr');
+                checkbox.addEventListener('change', function() {
+                    updateRowColor(checkbox, row);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
